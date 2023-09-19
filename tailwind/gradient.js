@@ -36,10 +36,12 @@ module.exports = plugin(
 
             return {
               "@defaults gradient-color-stops": {},
-              "--tw-gradient-from": `${toColorValue(
-                value,
-              )} var(--tw-gradient-from-position)`,
-              "--tw-gradient-to": `${transparentToValue} var(--tw-gradient-to-position)`,
+              "--tw-gradient-from-color": toColorValue(value),
+              "--tw-gradient-from":
+                "var(--tw-gradient-from-color) var(--tw-gradient-from-position)",
+              "--tw-gradient-to-color": transparentToValue,
+              "--tw-gradient-to":
+                "var(--tw-gradient-to-color) var(--tw-gradient-to-position)",
               "--tw-gradient-stops": `var(--tw-gradient-from), var(--tw-gradient-to)`,
             };
           },
@@ -65,7 +67,9 @@ module.exports = plugin(
 
             return {
               "@defaults gradient-color-stops": {},
-              "--tw-gradient-to": `${transparentToValue}  var(--tw-gradient-to-position)`,
+              "--tw-gradient-to-color": transparentToValue,
+              "--tw-gradient-to":
+                "var(--tw-gradient-to-color) var(--tw-gradient-to-position)",
               "--tw-gradient-stops": `var(--tw-gradient-from), ${toColorValue(
                 value,
               )} var(--tw-gradient-via-position), var(--tw-gradient-to)`,
@@ -90,9 +94,9 @@ module.exports = plugin(
         {
           to: (value) => ({
             "@defaults gradient-color-stops": {},
-            "--tw-gradient-to": `${toColorValue(
-              value,
-            )} var(--tw-gradient-to-position)`,
+            "--tw-gradient-to-color": toColorValue(value),
+            "--tw-gradient-to":
+              "var(--tw-gradient-to-color) var(--tw-gradient-to-position)",
           }),
         },
         options,
