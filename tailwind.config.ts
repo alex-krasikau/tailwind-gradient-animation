@@ -7,6 +7,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {},
-  plugins: [],
+  corePlugins: {
+    gradientColorStops: false,
+  },
+  plugins: [require("./tailwind/gradient")],
 };
 export default config;
