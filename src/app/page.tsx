@@ -3,7 +3,7 @@ export default function Home() {
     <main className="container mx-auto p-4 lg:p-16">
       <h1 className="text-2xl font-semibold">Tailwind Gradient Animation</h1>
 
-      <div className="mt-16 flex gap-x-16">
+      <div className="mt-16 flex flex-wrap gap-16">
         <div>
           <h2 className="text-xl font-medium">Gradient on hover button</h2>
 
@@ -36,6 +36,16 @@ export default function Home() {
           <h2 className="text-xl font-medium">Animated using @property</h2>
 
           <button className="transition-gradient mt-4 rounded-lg bg-gradient-to-t px-6 py-2 text-white duration-500 ease-out from-gray-900 to-gray-900 hover:to-gray-500">
+            Button
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-16 flex gap-x-16">
+        <div>
+          <h2 className="text-xl font-medium">Fancy color animation</h2>
+
+          <button className="transition-gradient animate-fancy mt-4 rounded-lg bg-gradient-to-t px-6 py-2 text-white from-red-500 to-yellow-500">
             Button
           </button>
         </div>
